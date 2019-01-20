@@ -1,0 +1,164 @@
+$color_blue: #4169E1;
+$color_red: #e2131c;
+$color_green: #0d763b;
+$sot_height: 34px;
+$sot_width: 19.5px;
+.abs {
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+}
+.app-screen {
+  @extend .abs;
+}
+.app-popup-conteiner {
+  box-sizing: border-box;
+  padding: 12px;
+  @extend .abs;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app-popup-wrapper {
+  @extend .abs;
+  pointer-events: none;
+  background-position-y: -0.5px;
+  background-image: url("./styles/appbackground.jpg");
+  opacity: 0.8;
+}
+
+.app-select{
+  width:100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  box-sizing: border-box;
+}
+
+.app-select-title{
+  text-align: left;
+  &:after{
+    content: ':';
+  }
+}
+.app-select-value{
+  text-align: left;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid $color_blue;
+  span{
+    text-align: center;
+    width: 100%;
+    flex: 1;
+  }
+}
+.app-select-option{
+  font-size: 20px;
+  text-align: center;
+  line-height: 48px;
+  border-bottom: 2px solid $color_blue;
+  &:last-child{
+    border-bottom: none;
+  }
+}
+.app-popup{
+  border:2px solid currentColor;
+  color: $color_blue;
+  width: 100%;
+  z-index: 1;
+}
+.app {
+  @extend .abs;
+  text-align: center;
+  background-image: url("./styles/appbackground.jpg");
+}
+.app-map{
+  @extend .abs;
+  background-size: 60px;
+  background-image: url("./styles/sot.png");
+}
+.app-map-meteor{
+  position: absolute;
+  width: $sot_width;
+  height: $sot_height;
+  background:red;
+  &:before{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: -$sot_width/2;
+    border: $sot_height/2 solid transparent;
+    border-right: $sot_width/2 solid red;
+    border-left: none;
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top:0;
+    left: $sot_width;
+    border: $sot_height/2 solid transparent;
+    border-left: $sot_width/2 solid red;
+    border-right: none;
+  }
+}
+.app-btn{
+  border:2px solid currentColor;
+  color: $color_blue;
+  font-size: 19px;
+  line-height: 36px;
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  .-red{
+    color: $color_blue;
+
+  }
+}
+.app-btn-game{
+  position: absolute;
+  right: 16px;
+  bottom:0;
+  overflow: hidden;
+  color:$color_green;
+  font-size: 56px;
+  line-height: 1;
+  width: 56px;
+}
+.app-btn-close{
+  position: absolute;
+  left: 50%;
+  bottom:0;
+  overflow: hidden;
+  color:$color_green;
+  font-size: 56px;
+  line-height: 1;
+  margin-left: -28px;
+  width: 56px;
+}
+.app {
+  @extend .abs;
+  text-align: center;
+  background-image: url("./styles/appbackground.jpg");
+}
+.app-menu-btn{
+  @extend .app-btn;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.app-menu{
+  box-sizing: border-box;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import {connect} from 'react-redux';
+import './App.scss';
+import Menu from './screen/Menu';
+import GameSettings from './screen/GameSettings';
+import Game from './screen/Game';
 class App extends Component {
+  renderPlugin(){
+      const {plugin} = this.props;
+      switch (plugin) {
+          case 'Menu' :
+            return <Menu/>;
+          case 'GameSettings' :
+            return <GameSettings/>;
+          case 'Game' :
+            return <Game/>;
+          default: return <div>Нет такого экрана</div>
+      }
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="app">
+          {this.renderPlugin()}
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state, props) => {
+    return {
+        plugin: state.navigation.plugin
+    }
+};
+
+export default connect(mapStateToProps)(App);
