@@ -5,8 +5,17 @@ import {store} from './store';
 import {Provider} from 'react-redux';
 import App from './App';
 
-ReactDOM.render(
-    <Provider store={store}>
-        <App />
-    </Provider>
+
+const startApp = () => {
+    ReactDOM.render(
+        <Provider store={store}>
+            <App />
+        </Provider>
         , document.getElementById('root'));
+};
+
+if (window.cordova) {
+    document.addEventListener('deviceready', startApp, false);
+} else {
+    startApp();
+}

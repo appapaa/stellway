@@ -1,4 +1,5 @@
 import getRange from "../lib/getRange";
+import _ from "lodash";
 
 export const SET_STATE = 'SET_GAME';
 const METEOR_ON_MAP = 0.1;
@@ -6,7 +7,8 @@ export const initialState = {
     size: 16,
     userCnt: 2,
     planetCntForUser:1,
-    spaceObj:{}
+    spaceObj:{},
+    mapGegs:{}
 };
 export const setParams = (data) => {
     return {
@@ -20,8 +22,14 @@ export const generateGame = (data) => (dispatch,getState)=>{
     const meteorCnt = Math.floor(size*size*METEOR_ON_MAP);
     // const meteorCnt = 5;
     const spaceObj = getRange(cnt+meteorCnt,size);
+    const mapGegs = {};
+    _.forEach(_.range(size),(x)=>{
+        _.forEach(_.range(size),(y)=> {
+            mapGegs[x+'_'+y] = 1;
+        });
+    });
     dispatch({
         type: SET_STATE,
-        data: {spaceObj}
+        data: {spaceObj,mapGegs}
     })
 };

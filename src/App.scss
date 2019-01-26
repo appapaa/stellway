@@ -1,20 +1,24 @@
 $color_blue: #4169E1;
 $color_red: #e2131c;
 $color_green: #0d763b;
-$sot_height: 34px;
-$sot_width: 19.5px;
+$color_brown: #8b5e23;
+$zoom: 2;
+$sot_height: 34px*$zoom;
+$sot_width: 18px*$zoom;
 .abs {
   position: absolute;
   width: auto;
   height: auto;
   left: 0;
-  top:0;
+  top: 0;
   bottom: 0;
   right: 0;
 }
+
 .app-screen {
   @extend .abs;
 }
+
 .app-popup-conteiner {
   box-sizing: border-box;
   padding: 12px;
@@ -23,6 +27,7 @@ $sot_width: 19.5px;
   align-items: center;
   justify-content: center;
 }
+
 .app-popup-wrapper {
   @extend .abs;
   pointer-events: none;
@@ -31,131 +36,157 @@ $sot_width: 19.5px;
   opacity: 0.8;
 }
 
-.app-select{
-  width:100%;
+.app-select {
+  width: 100%;
   padding-left: 12px;
   padding-right: 12px;
   box-sizing: border-box;
 }
 
-.app-select-title{
+.app-select-title {
   text-align: left;
-  &:after{
+  &:after {
     content: ':';
   }
 }
-.app-select-value{
+
+.app-select-value {
   text-align: left;
   height: 40px;
   display: flex;
   align-items: center;
   border-bottom: 2px solid $color_blue;
-  span{
+  span {
     text-align: center;
     width: 100%;
     flex: 1;
   }
 }
-.app-select-option{
+
+.app-select-option {
   font-size: 20px;
   text-align: center;
   line-height: 48px;
   border-bottom: 2px solid $color_blue;
-  &:last-child{
+  &:last-child {
     border-bottom: none;
   }
 }
-.app-popup{
-  border:2px solid currentColor;
+
+.app-popup {
+  border: 2px solid currentColor;
   color: $color_blue;
   width: 100%;
   z-index: 1;
 }
+
 .app {
   @extend .abs;
   text-align: center;
   background-image: url("./styles/appbackground.jpg");
 }
-.app-map{
+
+.app-map {
   @extend .abs;
-  background-size: 60px;
-  background-image: url("./styles/sot.png");
+  //background-size: 60px;
+  //background-image: url("./styles/sot.png");
 }
-.app-map-meteor{
+
+.app-game {
+  overflow: auto;
+}
+
+.app-map-gegs {
   position: absolute;
   width: $sot_width;
   height: $sot_height;
-  background:red;
-  &:before{
+  background: $color_blue;
+  opacity: 0.4;
+  margin-left: -$sot_width/2;
+  margin-top: -$sot_height/2;
+  &:before, &:after {
     content: '';
     display: block;
     width: 0;
     height: 0;
     position: absolute;
     top: 0;
-    left: -$sot_width/2;
     border: $sot_height/2 solid transparent;
-    border-right: $sot_width/2 solid red;
+  }
+  &:before {
+    left: -$sot_width/2;
+    border-right: $sot_width/2 solid $color_blue;
     border-left: none;
   }
-  &:after{
-    content: '';
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    top:0;
+  &:after {
     left: $sot_width;
-    border: $sot_height/2 solid transparent;
-    border-left: $sot_width/2 solid red;
+    border-left: $sot_width/2 solid $color_blue;
     border-right: none;
   }
 }
-.app-btn{
-  border:2px solid currentColor;
+
+.app-map-meteor {
+  position: absolute;
+  width: $sot_width*1.6;
+  height: $sot_height;
+  margin-left: -$sot_width*1.6/2;
+  margin-top: -$sot_height/2;
+  background-image: url("./styles/meteor.png");
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-position: center;
+}
+
+.app-btn {
+  border: 2px solid currentColor;
   color: $color_blue;
   font-size: 19px;
   line-height: 36px;
   float: left;
   width: 100%;
   box-sizing: border-box;
-  .-red{
+  .-red {
     color: $color_blue;
 
   }
 }
-.app-btn-game{
+
+.app-btn-game {
   position: absolute;
   right: 16px;
-  bottom:0;
+  bottom: 0;
   overflow: hidden;
-  color:$color_green;
+  color: $color_green;
   font-size: 56px;
   line-height: 1;
   width: 56px;
 }
-.app-btn-close{
+
+.app-btn-close {
   position: absolute;
   left: 50%;
-  bottom:0;
+  bottom: 0;
   overflow: hidden;
-  color:$color_green;
+  color: $color_green;
   font-size: 56px;
   line-height: 1;
   margin-left: -28px;
   width: 56px;
 }
+
 .app {
   @extend .abs;
   text-align: center;
   background-image: url("./styles/appbackground.jpg");
 }
-.app-menu-btn{
+
+.app-menu-btn {
   @extend .app-btn;
   margin-top: 4px;
   margin-bottom: 4px;
 }
-.app-menu{
+
+.app-menu {
   box-sizing: border-box;
   padding: 12px;
   display: flex;
