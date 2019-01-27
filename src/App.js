@@ -17,6 +17,10 @@ class App extends Component {
           default: return <div>Нет такого экрана</div>
       }
   }
+  componentDidMount(){
+      window.addEventListener("hashchange", this.props.exit, false);
+  }
+
   render() {
     return (
       <div className="app">
@@ -28,7 +32,8 @@ class App extends Component {
 
 const mapStateToProps = (state, props) => {
     return {
-        plugin: state.navigation.plugin
+        plugin: state.navigation.plugin,
+        exit: state.navigation.exit,
     }
 };
 

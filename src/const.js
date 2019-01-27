@@ -3,3 +3,7 @@ export const colors = {
     blue: '#4169E1',
     red: '#e2131c',
 };
+export const sot ={
+    x:30,
+    y:36
+};

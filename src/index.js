@@ -7,13 +7,16 @@ import App from './App';
 
 
 const startApp = () => {
+    if(!window.location.hash) {
+        window.location.hash = 'start';
+    }
+
     ReactDOM.render(
         <Provider store={store}>
             <App />
         </Provider>
         , document.getElementById('root'));
 };
-
 if (window.cordova) {
     document.addEventListener('deviceready', startApp, false);
 } else {

@@ -28,7 +28,7 @@ Plugin.defaultName = 'MenuScreen';
 
 const mapStateToProps = (state, props) => {
     return {
-        goTo: state.navigation.goTo
+        goTo: state.navigation.goTo,
     }
 };
 

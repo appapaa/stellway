@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 import Screen from '../components/Screen';
 import Map from '../components/Map';
 import {connect} from "react-redux";
+import {sot} from "../const";
 import _ from 'lodash';
 const ZOOM = 2;
-const SIZE_SOT_X = 30*ZOOM;
-const SIZE_SOT_Y = 36*ZOOM;
+const SIZE_SOT_X = sot.x*ZOOM;
+const SIZE_SOT_Y = sot.y*ZOOM;
 
 const SIZE_SOT_DX = SIZE_SOT_X/2;
 const SIZE_SOT_DY = SIZE_SOT_Y/2;
@@ -34,14 +35,23 @@ class Plugin extends Component {
             className="app-map-gegs"
         ></div>
     };
+    renderMapShip = (type, key) => {
+        return <div
+            key={key}
+            title={key}
+            style={this._getPos(key)}
+            className="app-map-ship-1"
+        ></div>
+    };
 
     render() {
-        const {spaceObj, mapGegs} = this.props;
+        const {spaceObj, mapGegs,mapShip} = this.props;
         return (
             <Screen className="app-game">
                 <Map>
                     {_.map(spaceObj, this.renderMapItem)}
                     {_.map(mapGegs, this.renderMapGegs)}
+                    {_.map(mapShip, this.renderMapShip)}
                 </Map>
             </Screen>
         );
@@ -53,7 +63,8 @@ Plugin.defaultName = 'Game';
 const mapStateToProps = (state, props) => {
     return {
         spaceObj: state.game.spaceObj,
-        mapGegs: state.game.mapGegs
+        mapGegs: state.game.mapGegs,
+        mapShip: state.game.mapShip,
     }
 };
 

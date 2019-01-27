@@ -8,7 +8,8 @@ export const initialState = {
     userCnt: 2,
     planetCntForUser:1,
     spaceObj:{},
-    mapGegs:{}
+    mapGegs:{},
+    ships:{},
 };
 export const setParams = (data) => {
     return {
@@ -22,6 +23,7 @@ export const generateGame = (data) => (dispatch,getState)=>{
     const meteorCnt = Math.floor(size*size*METEOR_ON_MAP);
     // const meteorCnt = 5;
     const spaceObj = getRange(cnt+meteorCnt,size);
+    const mapShip = getRange(cnt,size);
     const mapGegs = {};
     _.forEach(_.range(size),(x)=>{
         _.forEach(_.range(size),(y)=> {
@@ -30,6 +32,6 @@ export const generateGame = (data) => (dispatch,getState)=>{
     });
     dispatch({
         type: SET_STATE,
-        data: {spaceObj,mapGegs}
+        data: {spaceObj,mapGegs,mapShip}
     })
 };
