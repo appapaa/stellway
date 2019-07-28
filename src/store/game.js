@@ -23,7 +23,7 @@ export const generateGame = (data) => (dispatch,getState)=>{
     const meteorCnt = Math.floor(size*size*METEOR_ON_MAP);
     // const meteorCnt = 5;
     const spaceObj = getRange(cnt+meteorCnt,size);
-    const planetsObj = getP;anets(cnt+meteorCnt,size);
+    // const planetsObj = getPanets(cnt+meteorCnt,size);
     const mapShip = getRange(cnt,size);
     const mapGegs = {};
     _.forEach(_.range(size),(x)=>{
