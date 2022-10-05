@@ -2377,8 +2377,8 @@ css-url-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/css-url-regex/-/css-url-regex-1.1.0.tgz#83834230cc9f74c457de59eebd1543feeb83b7ec"
 
 css-what@2.1, css-what@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.2.tgz#c0876d9d0480927d7d4920dcd72af3595649554d"
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/css-what/-/css-what-2.1.3.tgz#a6d7604573365fe74686c3f311c56513d88285f2"
 
 cssdb@^4.1.0:
   version "4.3.0"
@@ -7119,12 +7119,6 @@ react-icons@^3.3.0:
 react-is@^16.3.2, react-is@^16.6.3:
   version "16.7.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.7.0.tgz#c1bd21c64f1f1364c6f70695ec02d69392f41bfa"
-
-react-promise@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-promise/-/react-promise-2.1.0.tgz#8a8d590b4ec9dc8fca428859bafe65c6f04e151e"
-  dependencies:
-    prop-types "^15.6.2"
 
 react-redux@^6.0.0:
   version "6.0.0"
