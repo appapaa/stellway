@@ -2537,8 +2537,8 @@ decamelize@^2.0.0:
     xregexp "4.0.0"
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
 
 deep-diff@^0.3.5:
   version "0.3.8"
@@ -7119,12 +7119,6 @@ react-icons@^3.3.0:
 react-is@^16.3.2, react-is@^16.6.3:
   version "16.7.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.7.0.tgz#c1bd21c64f1f1364c6f70695ec02d69392f41bfa"
-
-react-promise@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-promise/-/react-promise-2.1.0.tgz#8a8d590b4ec9dc8fca428859bafe65c6f04e151e"
-  dependencies:
-    prop-types "^15.6.2"
 
 react-redux@^6.0.0:
   version "6.0.0"
